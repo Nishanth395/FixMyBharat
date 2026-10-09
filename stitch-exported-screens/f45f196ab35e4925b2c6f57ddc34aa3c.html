@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-bright": "#f8f9ff", "on-secondary-container": "#5c6274", "error-container": "#ffdad6", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#004f52", "background": "#f8f9ff", "primary-fixed": "#8af3f9", "secondary-fixed-dim": "#c0c6da", "tertiary-container": "#008286", "on-primary-fixed": "#002021", "inverse-primary": "#6dd6dc", "surface-dim": "#cbdbf5", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#404757", "surface": "#f8f9ff", "surface-variant": "#d3e4fe", "secondary": "#585e6f", "on-primary-fixed-variant": "#004f53", "surface-container-lowest": "#ffffff", "outline-variant": "#bcc9c9", "inverse-on-surface": "#eaf1ff", "outline": "#6d797a", "on-surface-variant": "#3d4949", "secondary-fixed": "#dce2f6", "primary-fixed-dim": "#6dd6dc", "on-secondary-fixed": "#151b2a", "surface-container-high": "#dce9ff", "on-surface": "#0b1c30", "surface-tint": "#00696e", "inverse-surface": "#213145", "secondary-container": "#d9dff4", "tertiary-fixed": "#71f6fc", "tertiary": "#00676a", "primary-container": "#008287", "on-primary-container": "#f3ffff", "tertiary-fixed-dim": "#4fd9df", "surface-container": "#e5eeff", "on-background": "#0b1c30", "primary": "#00666b", "error": "#ba1a1a", "on-error": "#ffffff", "surface-container-highest": "#d3e4fe", "on-tertiary-container": "#f3ffff", "surface-container-low": "#eff4ff", "on-tertiary-fixed": "#002021" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter-lg": "2rem", "margin": "1rem", "space-md": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1rem", "space-xl": "2rem", "gutter-md": "1.5rem", "margin-md": "2rem", "margin-lg": "3rem", "space-lg": "1.5rem" }, fontFamily: { "body-sm": ["Geist"], "data-mono": ["Geist"], "title-md": ["Geist"], "label-sm": ["Geist"], "body-lg": ["Geist"], "label-md": ["Geist"], "display-lg": ["Geist"], "headline-lg": ["Geist"], "headline-sm": ["Geist"], "headline-md": ["Geist"], "display-lg-mobile": ["Geist"], "body-md": ["Geist"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }], "data-mono": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }], "title-md": ["15px", { "lineHeight": "22px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "600" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.025em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="FixMyBharat Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMwlGYyDeQr8gPDr28f49vOxeVDtVx_og7ud-gd130UxtKd7YCGzX7MXm09CpYNhhpXFjp3P6jWVMW6MYYZMKoHwsbzMGSBD6dDfU3aGsC1M8ZzIONcwtSRirGyW1icBDJOQ-55cSI6xOHLWZ_X180Ub3l4pgXN52A6AiWXftRhLQ9zckOOWFjkm8Ng7AmVXS4Tp9ox87UO1zUBdKqoTEMuvKk-9mNORhG5nWOmPObUaK7FiJHsiOI"/><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">FixMyBharat</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-primary font-label-sm text-label-sm uppercase tracking-wider leading-none">Civic AI</span></div><span class="font-label-sm text-label-sm text-on-surface-variant leading-none mt-0.5">My Reports</span></div></div><div class="flex items-center gap-space-sm"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKGvUpiiSCNqf1sybjWy_p9-ff5gdVy1b9cDE4AcKRmOgbSbh2wxBcznUhEE0SNUllVyI3a01ng2wiW7MAoZamcw4Kb7C50JLS8WCHKD4gimNw2XhSMLYZVD5yPrHcxcI-uUrEMbm-Z0oD2qrKHSWmUEibqk2M7ewS1U1Ip4HnrTEhQddw2T15pnjmsHevNRPKUxWd2hXQUGbcOHAte_rJNi5lSckuJd9tq3ygRqfK4nfgaqbqVzTb"/></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface flex-1"><div class="flex flex-col w-full px-margin space-y-space-md">
+<!-- Overview Stats Pill Bar -->
+<section class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">My Civic Reports</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+        3 Lodged
+      </span>
+</div>
+<!-- Quick Telemetry Counters -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs">
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex flex-col items-center justify-center text-center shadow-sm">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface leading-none">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Total Filed</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden">
+<div class="absolute top-1 right-1.5 w-2 h-2 rounded-full bg-error animate-ping"></div>
+<div class="absolute top-1 right-1.5 w-2 h-2 rounded-full bg-error"></div>
+<span class="font-display-lg-mobile text-display-lg-mobile text-error leading-none">1</span>
+<span class="font-label-sm text-label-sm text-error font-medium mt-1">Active SLA</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex flex-col items-center justify-center text-center shadow-sm">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary leading-none">2</span>
+<span class="font-label-sm text-label-sm text-primary mt-1">Resolved</span>
+</div>
+</div>
+</section>
+<!-- Filter & Search Controls -->
+<section class="flex flex-col space-y-space-sm">
+<!-- Search Bar -->
+<div class="relative flex items-center w-full">
+<span class="absolute left-3 material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-10 py-2.5 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md rounded-lg shadow-sm focus:outline-none focus:bg-surface-bright transition-all" id="reportSearchInput" placeholder="Search by ID (#FMB...) or landmark..." type="text"/>
+<button aria-label="Clear Search" class="absolute right-3 hidden text-on-surface-variant hover:text-on-surface" id="clearSearchBtn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Segmented Filter Pills -->
+<div class="flex items-center gap-space-xs bg-surface-container p-1 rounded-xl">
+<button class="filter-tab flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md transition-all bg-surface-container-lowest text-primary shadow-sm font-semibold" data-filter="all">
+        All (3)
+      </button>
+<button class="filter-tab flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-filter="active">
+        Active (1)
+      </button>
+<button class="filter-tab flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-filter="resolved">
+        Resolved (2)
+      </button>
+</div>
+</section>
+<!-- Live Active Complaint Card -->
+<article class="report-card report-status-active bg-surface-container-lowest rounded-xl shadow-md overflow-hidden transition-all duration-300">
+<!-- Header Strip -->
+<div class="bg-surface-container-low p-space-md flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-data-mono text-data-mono font-semibold text-primary">#FMB-BLR-8921</span>
+<span class="text-on-surface-variant text-[11px]">• Ward 88</span>
+</div>
+<span class="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm uppercase font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+          Critical Hazard
+        </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold pt-0.5">Open Drainage & Collapsed Manhole</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">near_me</span>
+        Near Metro Pillar 142, 100 Feet Rd, Indiranagar
+      </p>
+</div>
+<!-- Issue Evidence & Endorsement Section -->
+<div class="p-space-md space-y-space-md">
+<div class="relative rounded-lg overflow-hidden h-36 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A photo taken from a smartphone showing a damaged municipal road with an open stormwater drain manhole in Indiranagar Bengaluru. Construction barricade cone nearby, high daylight, urban street setting with teal accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgYv-4ijMu0SCw6jvJjXLlp8P9EqKlAOpZX5VNJARGSbxxGeo9nnv7rNtIKoy_NDhKiiD82WSpIkPl2E3CY5Dg1yFBgwpRxA2omSoyYQOxqC84IPRi0fWrwi7M-ptgKlIyJTJHQB9AMQGlgZuGJeDkywtNcFRU1B_lkssB0maw4o1Onwl02r-zYyoXzPAdRJo1yBp2uQ7f8ChKr6PdsPfocG9A-bHzHswOxYy5gelw5kcoL3aRCXbQ"/>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/85 backdrop-blur-md px-2 py-1 rounded-md flex items-center gap-1.5 text-inverse-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">verified</span>
+<span class="font-label-sm text-label-sm">GPS Tagged: 12.9784° N, 77.6408° E</span>
+</div>
+<div class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-md px-2 py-1 rounded-full flex items-center gap-1 text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-sm text-label-sm font-semibold">4 Citizen Backers</span>
+</div>
+</div>
+<!-- Live Lifecyle Stepper Tracking -->
+<div class="bg-surface-container-low rounded-lg p-space-md space-y-3">
+<div class="flex items-center justify-between pb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Dispatch Lifecycle</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+            Est. Resolution: ~2 Hours
+          </span>
+</div>
+<div class="relative pl-6 space-y-4">
+<!-- Continuous Vertical Path -->
+<div class="absolute left-[9px] top-2 bottom-2 w-0.5 bg-surface-variant"></div>
+<!-- Step 1: Submitted -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 mt-0.5 w-[19px] h-[19px] rounded-full bg-primary flex items-center justify-center text-on-primary shadow-xs">
+<span class="material-symbols-outlined text-[13px] leading-none">check</span>
+</div>
+<div class="flex-1">
+<p class="font-title-md text-title-md text-on-surface font-semibold leading-none">Submitted & Registered</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Today at 08:30 AM via Mobile Citizen App</p>
+</div>
+</div>
+<!-- Step 2: Under Review -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 mt-0.5 w-[19px] h-[19px] rounded-full bg-primary flex items-center justify-center text-on-primary shadow-xs">
+<span class="material-symbols-outlined text-[13px] leading-none">check</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-1.5">
+<p class="font-title-md text-title-md text-on-surface font-semibold leading-none">AI Priority Triaged</p>
+<span class="px-1.5 py-0.2 bg-primary-fixed text-on-primary-fixed text-[10px] font-bold rounded">94% CONFIDENCE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">08:42 AM • Severity marked as Critical Pedestrian Risk</p>
+</div>
+</div>
+<!-- Step 3: Assigned -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 mt-0.5 w-[19px] h-[19px] rounded-full bg-primary flex items-center justify-center text-on-primary shadow-xs">
+<span class="material-symbols-outlined text-[13px] leading-none">check</span>
+</div>
+<div class="flex-1">
+<p class="font-title-md text-title-md text-on-surface font-semibold leading-none">Assigned to Municipal Team</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">09:15 AM • BBMP Ward 88 Rapid Stormwater Unit</p>
+</div>
+</div>
+<!-- Step 4: Active Current Step -->
+<div class="relative flex items-start gap-space-sm">
+<div class="absolute -left-6 mt-0.5 w-[19px] h-[19px] rounded-full bg-surface-container-lowest ring-2 ring-primary flex items-center justify-center">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-space-sm rounded-lg shadow-sm">
+<div class="flex items-center justify-between">
+<p class="font-title-md text-title-md text-primary font-bold leading-none">In Progress: On-site Repair</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10:00 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Crew truck (KA-01-EA-4902) deployed with cast-iron replacement slab and hazard barriers.</p>
+</div>
+</div>
+<!-- Step 5: Final Step Pending -->
+<div class="relative flex items-start gap-space-sm opacity-50">
+<div class="absolute -left-6 mt-0.5 w-[19px] h-[19px] rounded-full bg-surface-variant flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+</div>
+<div class="flex-1">
+<p class="font-title-md text-title-md text-on-surface leading-none">Resolved & Photoverified</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Awaiting geo-tagged post-repair citizen audit</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Micro Actions -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex gap-space-xs">
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 bg-secondary-container text-on-secondary-fixed rounded-lg font-title-md text-title-md hover:bg-surface-variant transition-colors" id="addPhotoBtn">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+<span>Add Evidence</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 bg-secondary-container text-on-secondary-fixed rounded-lg font-title-md text-title-md hover:bg-surface-variant transition-colors" id="shareStatusBtn">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Share Ticket</span>
+</button>
+</div>
+<button class="w-full flex items-center justify-center gap-1.5 py-2 px-3 text-on-surface-variant hover:text-error font-label-md text-label-md rounded-lg transition-colors" id="escalateBtn">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<span>Flag Delay to Zonal Commissioner</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Historical & Resolved Reports Section Header -->
+<div class="flex items-center justify-between pt-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Resolved Reports</h3>
+<span class="font-label-sm text-label-sm text-primary font-medium">100% SLA Honored</span>
+</div>
+<!-- Historical Report Card 1 -->
+<article class="report-card report-status-resolved bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden p-space-md space-y-space-sm transition-all hover:shadow-md">
+<div class="flex items-start justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-data-mono text-data-mono text-secondary font-semibold">#FMB-BLR-7412</span>
+<span class="text-on-surface-variant text-[11px]">• 12th Main Road</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Defective LED Streetlight Flashing</h4>
+</div>
+<span class="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+        Resolved
+      </span>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="w-14 h-14 rounded-lg overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of a replaced modern municipal LED streetlight luminaire securely fixed on an electric pole in a residential Indian street, clear twilight sky, sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGOTzrpi-1elrbt5827tqhgzCgKGd1okTN58T6oBW51wrI8rWnT4CrKlwcIgFU7b8vUD-N3nMKfnswp0xP0QaUCRqgU2m7wcyxQLgSut5CT-5n5sVr3ZZEDGyLIS8ogZh9_kiqtXXoENKaDJF_o5uHk0SjBa7bx4En84xJJ7bIU1_M3S7V_R4ErQtjaMMZmlAOaz2B7dQD_SnkoWzxnY_s5Cwn8-MIhR3EfUele-eOa8gT_49sZJq1"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-body-sm text-on-surface font-medium truncate">Replaced fixture & driver module</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Closed 3 days ago • BESCOM Ward Crew #4</p>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold">Validated via Light Sensor Telemetry</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Resolution SLA: 18h (Target: 48h)</span>
+<button class="font-label-md text-label-md text-primary font-semibold hover:underline flex items-center gap-0.5">
+<span>Receipt & Audit</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Historical Report Card 2 -->
+<article class="report-card report-status-resolved bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden p-space-md space-y-space-sm transition-all hover:shadow-md">
+<div class="flex items-start justify-between">
+<div class="space-y-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-data-mono text-data-mono text-secondary font-semibold">#FMB-BLR-6109</span>
+<span class="text-on-surface-variant text-[11px]">• 5th Cross, CMH Road</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Illegal Commercial Debris Dumping</h4>
+</div>
+<span class="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm uppercase font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+        Resolved
+      </span>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="w-14 h-14 rounded-lg overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="A clean concrete sidewalk curb cleared of garbage piles in Bengaluru city with green planted flower boxes, bright morning sunshine, civic transformation after municipal cleanup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC94cTPGV8n5cRb7ilAE1BCXTA45y7bX0dV-hgw_mt_zGzCLMa-ZxlY5T31F2vsNtNnkM1ulPgDvCvGzeQ4aXkAK6S3135GNuKZ7MkIVrNrvksvbzBuEOQ7EUr2DESjhL4MpDAMYAfduqdsUKdhy53qjtevPQqxrY2SQe0smGnIeSewPUuAYcO0y9epRQ43uCwnsC1GHnJHJUmLfExYJAt5tTD14L_kRSyMQEmOTCZ4ABKBqKb8mrZ7"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-sm text-body-sm text-on-surface font-medium truncate">Dump cleared & CCTV advisory issued</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Closed 1 week ago • BBMP Health Officer Rao</p>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">rate_review</span>
+<span class="font-label-sm text-label-sm font-semibold">Rated 5★ by 8 Local Residents</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Resolution SLA: 26h (Target: 48h)</span>
+<button class="font-label-md text-label-md text-primary font-semibold hover:underline flex items-center gap-0.5">
+<span>Receipt & Audit</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Empty State Placeholder (Hidden by default, shown when filtering/searching matches 0) -->
+<div class="hidden flex-col items-center justify-center py-10 px-4 text-center bg-surface-container rounded-xl" id="noResultsState">
+<div class="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center text-primary mb-3">
+<span class="material-symbols-outlined text-[28px]">search_off</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">No Matching Reports Found</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">
+      We couldn't find any complaints matching your query. Check the Ticket ID format or clear filter tags.
+    </p>
+<button class="mt-4 px-4 py-2 bg-primary text-on-primary rounded-lg font-title-md text-title-md shadow-sm" id="resetFiltersBtn">
+      Reset All Filters
+    </button>
+</div>
+<!-- Citizens Charter SLA Guarantee Card -->
+<section class="bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-lowest text-primary shadow-xs shrink-0">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div class="space-y-1">
+<h4 class="font-title-md text-title-md text-on-surface font-semibold">Citizens' Charter Assurance</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Under the Sakala Services Act, critical municipal hazards require formal action within 48 hours. Every complaint generates an immutable digital trail accessible to civic ombudsmen.
+        </p>
+<div class="flex items-center gap-3 pt-1">
+<a class="font-label-sm text-label-sm text-primary font-semibold hover:underline flex items-center gap-0.5" href="#">
+<span>View Public SLA Matrix</span>
+<span class="material-symbols-outlined text-[12px]">open_in_new</span>
+</a>
+<span class="text-on-surface-variant text-[11px]">•</span>
+<a class="font-label-sm text-label-sm text-primary font-semibold hover:underline" href="#">
+            Toll-Free 1533
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Feedback Toast -->
+<div class="fixed bottom-20 left-4 right-4 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none" id="feedbackToast">
+<div class="bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-xl flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toastMessage">Ticket link copied to clipboard!</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initDashboardInteractions() {
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const reportCards = document.querySelectorAll('.report-card');
+    const searchInput = document.getElementById('reportSearchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const noResultsState = document.getElementById('noResultsState');
+    const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+    const toast = document.getElementById('feedbackToast');
+    const toastMsg = document.getElementById('toastMessage');
+
+    let currentFilter = 'all';
+
+    function showToast(msg) {
+      if (!toast) return;
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+      }, 2600);
+    }
+
+    function applyFilters() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      let visibleCount = 0;
+
+      reportCards.forEach(card => {
+        const isResolved = card.classList.contains('report-status-resolved');
+        const isActive = card.classList.contains('report-status-active');
+        const cardText = card.textContent.toLowerCase();
+
+        const matchesFilter = (currentFilter === 'all') || 
+                              (currentFilter === 'active' && isActive) || 
+                              (currentFilter === 'resolved' && isResolved);
+
+        const matchesSearch = !query || cardText.includes(query);
+
+        if (matchesFilter && matchesSearch) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (noResultsState) {
+        if (visibleCount === 0) {
+          noResultsState.classList.remove('hidden');
+          noResultsState.classList.add('flex');
+        } else {
+          noResultsState.classList.add('hidden');
+          noResultsState.classList.remove('flex');
+        }
+      }
+    }
+
+    // Filter Buttons
+    filterTabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterTabs.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+        btn.classList.remove('text-on-surface-variant');
+        
+        currentFilter = btn.getAttribute('data-filter') || 'all';
+        applyFilters();
+      });
+    });
+
+    // Search Logic
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        if (e.target.value.length > 0) {
+          clearSearchBtn?.classList.remove('hidden');
+        } else {
+          clearSearchBtn?.classList.add('hidden');
+        }
+        applyFilters();
+      });
+    }
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        clearSearchBtn.classList.add('hidden');
+        applyFilters();
+      });
+    }
+
+    if (resetFiltersBtn) {
+      resetFiltersBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        clearSearchBtn?.classList.add('hidden');
+        currentFilter = 'all';
+        filterTabs[0]?.click();
+      });
+    }
+
+    // Quick Action Buttons
+    const shareBtn = document.getElementById('shareStatusBtn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', () => {
+        showToast('Tracking link #FMB-BLR-8921 copied to clipboard!');
+      });
+    }
+
+    const addPhotoBtn = document.getElementById('addPhotoBtn');
+    if (addPhotoBtn) {
+      addPhotoBtn.addEventListener('click', () => {
+        showToast('Camera opened: Attach supplementary photo evidence.');
+      });
+    }
+
+    const escalateBtn = document.getElementById('escalateBtn');
+    if (escalateBtn) {
+      escalateBtn.addEventListener('click', () => {
+        showToast('Urgent notification routed to Zonal Executive Engineer.');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-title-md"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant transition-colors hover:text-on-surface" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">explore</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant transition-colors hover:text-on-surface" data-path="report" href="#"><span class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md shadow-primary/25"><span class="material-symbols-outlined text-[20px]">add_a_photo</span></span><span class="font-label-sm text-label-sm mt-0.5 text-primary font-title-md">Report</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors text-primary font-title-md" data-path="my-reports" href="#"><span class="material-symbols-outlined text-[22px]">assignment_late</span><span class="font-label-sm text-label-sm mt-0.5">My Reports</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant transition-colors hover:text-on-surface" data-path="operations" href="#"><span class="material-symbols-outlined text-[22px]">local_shipping</span><span class="font-label-sm text-label-sm mt-0.5">Operations</span></a></div></nav></body></html>
